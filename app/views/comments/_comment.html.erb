@@ -5,6 +5,7 @@
     <hr class="mt-6">
   <% end %>
 
+  <p class="text-gray-700"><%= comment.body %></p>
 
-  <p class="text-gray-700 "><%= comment.body %></p>
+  <span class="text-sm text-gray-500 block mt-2">Adicionado em <%= I18n.l comment.created_at, format: :long %></span>
 </div>
