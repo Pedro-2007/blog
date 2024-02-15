@@ -1,0 +1,9 @@
+<!-- app/views/users/index.html.erb -->
+<h1>Lista de Usuários</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %></li>
+    <!-- Adicione mais campos conforme necessário -->
+  <% end %>
+</ul>
