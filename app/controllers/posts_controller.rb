@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    # Lógica para a página inicial, se necessário
   end
 
   # GET /posts/1 or /posts/1.json
