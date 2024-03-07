@@ -15,12 +15,13 @@ class UsersController < ApplicationController
     redirect_to root_path if current_user
   end
     
-    def index
-        @user = User.new(user_params)
-        if @user.save
-          session[:user_id] = @user.id
-          redirect_to root_path, notice: 'Usuário criado com sucesso!'
-        else
-          render :new
+  def index
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: 'Usuário criado com sucesso!'
+    else
+      render :new
     end
   end
+end

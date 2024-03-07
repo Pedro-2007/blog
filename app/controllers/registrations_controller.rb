@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
-      redirect_to new_session_path, notice: 'Conta criada, faça login!'
+      redirect_to root_path, notice: 'Conta criada!'
     else
       render :new
     end
