@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index]
-  
-
+  belongs_to
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -83,10 +82,10 @@ class PostsController < ApplicationController
     end
   end
   
+  
   private
     def post_params
       params.require(:post).permit(:content)
     end
-  end
-end 
+  
 
