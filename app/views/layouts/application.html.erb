@@ -22,7 +22,7 @@
 
       <div>
         <% if logged_in? %>
-          Olá <%= current_user.email %>,
+          Olá <%= current_user.name %>,
           <%= link_to 'Sair', sessions_path, 'data-turbo-method' => 'delete' %>
         <% end %>
       </div>
