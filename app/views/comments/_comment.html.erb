@@ -3,9 +3,11 @@
     <%= link_to "Show this comment", comment, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Edit this comment", edit_comment_path(comment), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
+    
   <% end %>
 
   <p class="text-gray-700"><%= comment.body %></p>
-
+  <hr>
+  <p> Criado por: <%=comment.user.email%></p>
   <span class="text-sm text-gray-500 block mt-2">Adicionado em <%= I18n.l comment.created_at, format: :long %></span>
 </div>
