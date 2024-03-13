@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  has_many :posts
   def new
     @user = User.new
   end
