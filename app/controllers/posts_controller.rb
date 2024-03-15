@@ -9,6 +9,11 @@ class PostsController < ApplicationController
     # Lógica para a página inicial, se necessário
   end
 
+  def user_posts
+    @posts = Post.where(user_id: current_user.id)
+  end
+  
+
   # GET /posts/1 or /posts/1.json
   def show
     @comment = Comment.new
@@ -69,23 +74,12 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-       params.fetch(:post, {}).permit(:title, :body)
+      params.fetch(:post, {}).permit(:title, :body)
     end
-  end
-  
-  def create
-    @post = current_user.posts.build(post_params)
-    if @post.save
-      # ...
-    else
-      # ...
-    end
-  end
+end
   
   
-  private
-    def post_params
-      params.require(:post).permit(:content)
-    end
+
+
   
 
