@@ -4,8 +4,10 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @current_page = params[:page].to_i 
+    @posts = Post.all.limit(2).offset(@current_page * 2)
     @post = Post.new
+    @total_pages = Post.count / 2 
     # Lógica para a página inicial, se necessário
   end
 
