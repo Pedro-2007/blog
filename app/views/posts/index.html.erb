@@ -8,5 +8,11 @@
     <%= render @posts %>
   </div>
 
+  <div class="my-4">
+    <% @total_pages.times do |page| %> 
+      <%= link_to page + 1, posts_path(page: page), class: "py-2 px-3 text-black #{page == @current_page ? "bg-blue-500" : "bg-white"} border border-gray-300 hover:bg-gray-100 hover:text-gray-700" %>
+    <% end %>
+  </div>
+
   <%= render "form", post: @post %>
 </div>
